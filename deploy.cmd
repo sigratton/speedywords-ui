@@ -109,9 +109,9 @@ echo Handling Angular build
 :: 4. Build ng app
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd "!NODE_EXE!" ./node_modules/@angular/cli/bin/ng build --prod --env=prod --aot
+  call :ExecuteCmd !NPM_CMD! run build
   :: the next line is optional to fix 404 error see section #8
-  call :ExecuteCmd cp "%DEPLOYMENT_TARGET%"/web.config "%DEPLOYMENT_TARGET%"/dist/
+  ::call :ExecuteCmd cp "%DEPLOYMENT_TARGET%"/web.config "%DEPLOYMENT_TARGET%"/dist/
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
