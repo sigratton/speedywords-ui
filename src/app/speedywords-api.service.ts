@@ -1,12 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SpeedywordsApiService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  public getList(id: number) {
-    return {
+  public getList(name: string): Promise<any> {
+    return this.http.get(encodeURI('http://localhost:8080/list?name=' + name))
+    .toPromise()
+    .then((response) => {
+      return response.json() as Object;
+    })
+    .catch((err: any) => {
+      return Promise.reject(err.message || err);
+    });
+    
+    
+
+
+    /*return {
         "_id": "5983f9422f78912fd429fe94",
         "name": "List 1",
         "__v": 0,
@@ -52,7 +66,7 @@ export class SpeedywordsApiService {
                 "_id": "5983f9422f78912fd429fe95"
             }
         ]
-    }
+    }*/
   }
 
 }

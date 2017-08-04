@@ -1,10 +1,26 @@
-<div>
-  <h1>{{word}}</h1>
+<br/>
+<br/>
+<div style="text-align:center">
+  <h1 class="display-1"><span class="badge" style="background:pink">{{word}}</span></h1>
 </div>
-<div>
-  <button (click)="Beginning()">Beginning</button>
-  <button (click)="Play()">Play</button>
-  <button (click)="Stop()">Stop</button>
-  <button (click)="Next()">Next</button>
-  <input type="text" [(ngModel)]="speed" />
+<br/>
+<br/>
+<div style="text-align:center">
+  <div class="btn-group btn-group-lg"> 
+    <button type="button" class="btn btn-secondary" [disabled]="playing" (click)="Beginning()">Beginning</button>
+    <button type="button" [style.background-color]="playColour" [disabled]="playing" class="btn btn-secondary" (click)="Play()">Play</button>
+    <button type="button" [style.background-color]="stopColour" [disabled]="!playing" class="btn btn-secondary" (click)="Stop()">Stop</button>
+    <button type="button" class="btn btn-secondary" [disabled]="atEnd || playing" (click)="Next()">Next</button>
+    <button type="button" [style.background-color]="randomColour" class="btn btn-secondary"(click)="Random()">Random</button>
+  </div>
+</div>
+<br/>
+<div style="text-align:center">
+  <div class="btn-group btn-group-lg"> 
+    <button type="button" class="btn btn-secondary" (click)="Slower()">Slower</button>
+    <button type="button" class="btn btn-secondary" (click)="Faster()">Faster</button>
+  </div>
+</div>
+<div>  
+  {{error}}
 </div>
