@@ -85,7 +85,7 @@ export class WordListComponent implements OnInit {
   Random() {
     this.random = !this.random;
     if(this.random) {
-      this.randomColour = "green";
+      this.randomColour = "#c6ffb3";
     }
     else {
       this.randomColour = "";
@@ -105,8 +105,8 @@ export class WordListComponent implements OnInit {
   private Playing(playing: boolean) {
     this.playing = playing;
     if(playing) {
-      this.playColour = "green";
-      this.stopColour = "red";
+      this.playColour = "#99ff66";
+      this.stopColour = "#ff6666";
     } 
     else {
       this.playColour = "";
