@@ -8,7 +8,7 @@ export class SpeedywordsApiService {
   constructor(private http: Http) { }
 
   public getList(name: string): Promise<any> {
-    return this.http.get(encodeURI('http://localhost:8080/list?name=' + name))
+    return this.http.get(encodeURI('http://http://speedwordsapi.azurewebsites.net/list?name=' + name))
     .toPromise()
     .then((response) => {
       return response.json() as Object;
