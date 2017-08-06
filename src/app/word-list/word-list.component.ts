@@ -96,7 +96,7 @@ export class WordListComponent implements OnInit {
   Random() {
     this.random = !this.random;
     if(this.random) {
-      this.randomColour = "#c6ffb3";
+      this.randomColour = "#99ff66";
     }
     else {
       this.randomColour = "";
