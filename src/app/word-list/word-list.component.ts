@@ -3,7 +3,7 @@ import { SpeedywordsApiService } from '../speedywords-api.service';
 
 @Component({
   selector: 'app-word-list',
-  templateUrl: './word-list.component.html',
+  templateUrl: './word-list.component.1.html',
   styleUrls: ['./word-list.component.css'],
   providers: [SpeedywordsApiService]
 })
@@ -66,6 +66,17 @@ export class WordListComponent implements OnInit {
       this.atEnd = true;
       this.KillTimer();
     }
+  }
+
+  Back(){
+    this.ListPosition--;
+    if(this.ListPosition >= 0) {
+      this.word = this.wordList[this.ListPosition].value;
+    }
+    else {
+      this.word = this.listName;
+    }
+    
   }
 
   Player() {

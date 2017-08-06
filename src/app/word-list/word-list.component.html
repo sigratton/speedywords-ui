@@ -8,6 +8,7 @@
 <div style="text-align:center">
   <div class="btn-group btn-group-lg"> 
     <button type="button" class="btn btn-secondary" [disabled]="playing" (click)="Beginning()">Beginning</button>
+    <button type="button" class="btn btn-secondary" [disabled]="ListPosition < 0 || playing || random" (click)="Back()">Back</button>
     <button type="button" [style.background-color]="playColour" [disabled]="playing  || atEnd" class="btn btn-secondary" (click)="Play()">Play</button>
     <button type="button" [style.background-color]="stopColour" [disabled]="!playing" class="btn btn-secondary" (click)="Stop()">Stop</button>
     <button type="button" class="btn btn-secondary" [disabled]="atEnd || playing" (click)="Next()">Next</button>

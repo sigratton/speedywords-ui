@@ -1,0 +1,28 @@
+<br/>
+<br/>
+<div style="text-align:center">
+  <h1 class="display-1"><span class="badge" style="background:pink">{{word}}</span></h1>
+</div>
+<br/>
+<br/>
+<div style="text-align:center">
+  <div class="btn-group btn-group-lg"> 
+    <button type="button" class="btn btn-secondary" [disabled]="playing" (click)="Beginning()"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-secondary" [disabled]="ListPosition < 0 || playing || random" (click)="Back()"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+    <button type="button" [style.background-color]="playColour" [disabled]="playing  || atEnd" class="btn btn-secondary" (click)="Play()"><i class="fa fa-play" aria-hidden="true"></i></button>
+    <button type="button"  [disabled]="!playing" class="btn btn-secondary" (click)="Stop()"><i class="fa fa-stop" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-secondary" [disabled]="atEnd || playing" (click)="Next()"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+    <button type="button" [style.background-color]="randomColour" class="btn btn-secondary"(click)="Random()"><i class="fa fa-random" aria-hidden="true"></i></button>
+  </div>
+</div>
+<br/>
+<div style="text-align:center">
+  <div class="btn-group btn-group-lg"> 
+    <button type="button" class="btn btn-secondary" (click)="Slower()"><i class="fa fa-backward" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-secondary" disabled>{{speed}} secs</button>
+    <button type="button" class="btn btn-secondary" (click)="Faster()"><i class="fa fa-forward" aria-hidden="true"></i></button>
+  </div>
+</div>
+<div>  
+  {{error}}
+</div>
