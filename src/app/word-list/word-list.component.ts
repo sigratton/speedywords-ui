@@ -31,7 +31,7 @@ export class WordListComponent implements OnInit {
 
   ngOnInit() {
 //    var wordService = new SpeedywordsApiService();
-    this.swApiService.getList('List 1')
+    this.swApiService.getList('List 2')
     .then((result: any) => {
       this.wordList = result.words;
       this.listName = result.name;
