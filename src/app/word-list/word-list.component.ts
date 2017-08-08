@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { SpeedywordsApiService } from '../speedywords-api.service';
 
 @Component({
@@ -22,6 +22,8 @@ export class WordListComponent implements OnInit {
   private randomColour: string;
   private atEnd: boolean;
 
+  @Input() list: string;
+
   constructor(private swApiService: SpeedywordsApiService) {
     this.ListPosition = -1;
     this.random = false;
@@ -29,19 +31,21 @@ export class WordListComponent implements OnInit {
     this.Playing(false);   
   }
 
-  ngOnInit() {
-//    var wordService = new SpeedywordsApiService();
-    this.swApiService.getList('List 2')
+  ngOnChanges() {
+    this.swApiService.getList(this.list)
     .then((result: any) => {
       this.wordList = result.words;
       this.listName = result.name;
-      this.word = this.listName;
+      this.Stop();
+      this.Beginning();
     })
     .catch((err: any) => {
       this.listName = "Error";
       this.error = err.message || err;
     });
+  }
 
+  ngOnInit() {
     this.speed = 2;
   }
 
