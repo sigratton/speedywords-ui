@@ -65,7 +65,7 @@ export class WordListComponent implements OnInit {
     if(this.ListPosition < this.wordList.length) {
       this.word = this.wordList[this.ListPosition].value;
     }
-    else {
+    if(this.ListPosition === this.wordList.length - 1) {
       this.Playing(false);
       this.atEnd = true;
       this.KillTimer();
@@ -80,7 +80,8 @@ export class WordListComponent implements OnInit {
     else {
       this.word = this.listName;
     }
-    
+    // can't be at the end if we have just gone back
+    this.atEnd = false;
   }
 
   Player() {
