@@ -56,7 +56,7 @@ export class WordListComponent implements OnInit {
 
   Next() {
     if(this.random) {
-      this.ListPosition = Math.floor(Math.random() * this.wordList.length);
+      this.ListPosition = Math.floor(Math.random() * this.wordList.length - 1);
     }
     else {
       this.ListPosition++;
