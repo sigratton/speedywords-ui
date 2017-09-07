@@ -1,11 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="card">
   <div class="card-header">
-    Speedy Words 
-    <button type="button" class="btn btu-secondary active" (click)="SetList('List 1')">List 1</button>
-    <button type="button" class="btn btu-secondary" (click)="SetList('List 2')">List 2</button>
-    <button type="button" class="btn btu-secondary" (click)="SetList('List 3')">List 3</button>
-    <button type="button" class="btn btu-secondary" (click)="SetList('List 4')">List 4</button>
+    <div class="row">
+      <h3><b>Speedy Words</b></h3>
+      <div class="col text-right"> 
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-secordary" id="lists" ngbDropdownToggle>Lists</button>
+          <div ngbDropdownMenu aria-labelledby="lists">
+            <button type="button" class="dropdown-item active" (click)="SetList('List 1')">List 1</button>
+            <button type="button" class="dropdown-item" (click)="SetList('List 2')">List 2</button>
+            <button type="button" class="dropdown-item" (click)="SetList('List 3')">List 3</button>
+            <button type="button" class="dropdown-item" (click)="SetList('List 4')">List 4</button>
+            <button type="button" class="dropdown-item" (click)="SetList('Sounds')">Sounds</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="card-block">
     <app-word-list [list]="list"></app-word-list>
