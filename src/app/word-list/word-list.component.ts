@@ -32,6 +32,9 @@ export class WordListComponent implements OnInit {
   }
 
   ngOnChanges() {
+    if(!this.list)
+      return;
+      
     this.swApiService.getList(this.list)
     .then((result: any) => {
       this.wordList = result.words;
