@@ -8,10 +8,11 @@
           <button class="btn btn-outline-secordary" id="lists" ngbDropdownToggle>{{list}}</button>
           <div ngbDropdownMenu aria-labelledby="lists">
             <!--<button *NgForOf="Let l of lists" type="button" (click)="SetList('')">{{l}}</button>-->
-            <button type="button" class="dropdown-item active" (click)="SetList('List 1')">List 1</button>
+            <button type="button" class="dropdown-item" (click)="SetList('List 1')">List 1</button>
             <button type="button" class="dropdown-item" (click)="SetList('List 2')">List 2</button>
             <button type="button" class="dropdown-item" (click)="SetList('List 3')">List 3</button>
             <button type="button" class="dropdown-item" (click)="SetList('List 4')">List 4</button>
+            <button type="button" class="dropdown-item" (click)="SetList('List 5')">List 5</button>
             <button type="button" class="dropdown-item" (click)="SetList('Sounds')">Sounds</button>
           </div>
         </div>
